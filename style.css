@@ -18,6 +18,19 @@ body {
   height: 737.31px;
 }
 
+.professional {
+  position: absolute;
+  left: 0px;
+  top: 1076px;
+  width: 1440px;
+  height: 3615.31px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 222px;
+
+}
+
 .bottom_items{
     position: absolute;
     left: 108.69px;
@@ -224,3 +237,184 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* =========================
+   PROJECT SECTION
+========================= */
+
+.projects {
+  position: absolute;
+  left: 0px;
+  top: 1265px;
+  box-sizing: border-box;
+  width: 1440px;
+  height: 2350.31px;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* =========================
+   PROJECT
+========================= */
+
+.project {
+    position: relative;
+    left: 139.62px;
+  box-sizing: border-box;
+    width: 1160.76px;
+    height: 400.34px;
+    margin-bottom: 150px;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.project-image {
+    position: absolute;
+  box-sizing: border-box;
+    width: 58%;
+    height: 315px;
+    background: #32104d;
+    border-radius: 10px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+
+/* =========================
+   PROJECT CONTENT
+========================= */
+
+.project-content {
+    position: absolute;
+  box-sizing: border-box;
+    width: 55%;
+    z-index: 2;
+}
+
+
+/* Label */
+
+.project-label {
+    display: block;
+    color: #55ffff;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+
+/* Heading */
+
+.project-content h2 {
+    margin: 0 0 45px;
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+
+/* Description box */
+
+.project-description {
+    background: linear-gradient(
+        135deg,
+        rgba(48, 13, 70, 0.95),
+        rgba(30, 22, 65, 0.95)
+    );
+
+    padding: 25px 32px;
+    border-radius: 14px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.project-description p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   SOCIAL ICONS
+========================= */
+
+.project-socials {
+    display: flex;
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.project-socials a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 22px;
+
+    transition: 0.3s ease;
+}
+
+.project-socials a:hover {
+    color: #55ffff;
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   PROJECT 1
+========================= */
+
+.project-one .project-image {
+    right: 0;
+    top: 0;
+}
+
+.project-one .project-content {
+    left: 0;
+    top: 0;
+}
+
+.project-one .project-description {
+    margin-left: 0;
+    margin-top: 0;
+}
+
+
+/* =========================
+   PROJECT 2
+========================= */
+
+.project-two .project-image {
+    left: 0;
+    top: 0;
+}
+
+.project-two .project-content {
+    right: 0;
+    top: 0;
+    text-align: left;
+}
+
+.project-two .project-description {
+    margin-top: 0;
+}
+
+.project-two .project-socials {
+    justify-content: flex-end;
+}
+
