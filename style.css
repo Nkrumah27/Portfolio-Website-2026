@@ -254,6 +254,39 @@ body {
   padding: 0;
 }
 
+.project-list {
+  position: absolute;
+  inset: 0 0 72px;
+  overflow: hidden;
+}
+
+.project-tabs {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  display: flex;
+  gap: 12px;
+  transform: translateX(-50%);
+}
+
+.project-tabs button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #5DFFFF;
+  border-radius: 50%;
+  color: #FAFAFA;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+
+.project-tabs button[aria-selected="true"],
+.project-tabs button:hover,
+.project-tabs button:focus-visible {
+  color: #100425;
+  background: #5DFFFF;
+}
+
 
 /* =========================
    PROJECT

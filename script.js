@@ -1,6 +1,8 @@
 const contactForm = document.querySelector('.below_form form');
 const submitButton = document.querySelector('.below_form > button');
 const projectsContainer = document.querySelector('.projects');
+const projectsList = document.querySelector('.project-list');
+const projectTabs = document.querySelector('.project-tabs');
 
 class Project {
   constructor({ number, image, imageAlt, label, title, description, links }) {
@@ -61,6 +63,61 @@ class Project {
   }
 }
 
+class ProjectTabs {
+  constructor(projects, listElement, tabsElement, projectsPerPage = 4) {
+    this.projects = projects;
+    this.listElement = listElement;
+    this.tabsElement = tabsElement;
+    this.projectsPerPage = projectsPerPage;
+    this.currentPage = 1;
+    this.pageCount = Math.ceil(projects.length / projectsPerPage);
+  }
+
+  renderPage(pageNumber) {
+    this.currentPage = pageNumber;
+    this.listElement.replaceChildren();
+
+    const firstProject = (pageNumber - 1) * this.projectsPerPage;
+    const pageProjects = this.projects.slice(
+      firstProject,
+      firstProject + this.projectsPerPage
+    );
+
+    pageProjects.forEach((data) => {
+      this.listElement.append(new Project(data).render());
+    });
+
+    this.updateTabStates();
+  }
+
+  updateTabStates() {
+    this.tabsElement.querySelectorAll('[role="tab"]').forEach((tab, index) => {
+      const isActive = index + 1 === this.currentPage;
+      tab.setAttribute('aria-selected', String(isActive));
+      tab.tabIndex = isActive ? 0 : -1;
+    });
+  }
+
+  createTabs() {
+    this.tabsElement.replaceChildren();
+
+    for (let page = 1; page <= this.pageCount; page += 1) {
+      const tab = document.createElement('button');
+      tab.type = 'button';
+      tab.role = 'tab';
+      tab.textContent = String(page);
+      tab.setAttribute('aria-label', `Show project page ${page}`);
+      tab.addEventListener('click', () => this.renderPage(page));
+      this.tabsElement.append(tab);
+    }
+  }
+
+  render() {
+    this.createTabs();
+    this.renderPage(this.currentPage);
+  }
+}
+
 const projectData = [
   {
     number: 'one',
@@ -113,13 +170,24 @@ const projectData = [
       { url: '#', label: 'Twitter', icon: '' },
       { url: '#', label: 'LinkedIn', icon: '' }
     ]
+  },
+  {
+    number: 'one',
+    image: 'images/profile_pic.png',
+    imageAlt: 'Project Screenshot',
+    label: 'Featured Project',
+    title: 'Example Project',
+    description: 'A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.',
+    links: [
+      { url: '#', label: 'GitHub', icon: '' },
+      { url: '#', label: 'Twitter', icon: '' },
+      { url: '#', label: 'LinkedIn', icon: '' }
+    ]
   }
 ];
 
-if (projectsContainer) {
-  projectData.forEach((data) => {
-    projectsContainer.append(new Project(data).render());
-  });
+if (projectsContainer && projectsList && projectTabs) {
+  new ProjectTabs(projectData, projectsList, projectTabs).render();
 }
 
 if (contactForm && submitButton) {
