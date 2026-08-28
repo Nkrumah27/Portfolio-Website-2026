@@ -5,12 +5,13 @@ const projectsList = document.querySelector('.project-list');
 const projectTabs = document.querySelector('.project-tabs');
 
 class Project {
-  constructor({ number, image, imageAlt, label, title, description, links }) {
+  constructor({ number, image, imageAlt, label, title, dateRange, description, links }) {
     this.number = number;
     this.image = image;
     this.imageAlt = imageAlt;
     this.label = label;
     this.title = title;
+    this.dateRange = dateRange;
     this.description = description;
     this.links = links;
   }
@@ -45,6 +46,10 @@ class Project {
     const title = document.createElement('h2');
     title.textContent = this.title;
 
+    const date = document.createElement('span');
+    date.className = 'project-date';
+    date.textContent = this.dateRange;
+
     const description = document.createElement('div');
     description.className = 'project-description';
     const paragraph = document.createElement('p');
@@ -57,7 +62,7 @@ class Project {
       socials.append(this.createLink(url, linkLabel, icon));
     });
 
-    content.append(label, title, description, socials);
+    content.append(label, title, date, description, socials);
     project.append(imageWrapper, content);
     return project;
   }
@@ -125,6 +130,7 @@ const projectData = [
     imageAlt: 'Project Screenshot',
     label: 'Featured Project',
     title: 'Example Project',
+    dateRange: '2024 - Present',
     description: 'A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.',
     links: [
       { url: '#', label: 'GitHub', icon: '' },
@@ -138,6 +144,7 @@ const projectData = [
     imageAlt: 'Project Screenshot',
     label: 'Featured Project',
     title: 'Example Project',
+    dateRange: '2024 - Present',
     description: 'A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.',
     links: [
       { url: '#', label: 'GitHub', icon: '' },
@@ -151,6 +158,7 @@ const projectData = [
     imageAlt: 'Project Screenshot',
     label: 'Featured Project',
     title: 'Example Project',
+    dateRange: '2024 - Present',
     description: 'A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.',
     links: [
       { url: '#', label: 'GitHub', icon: '' },
@@ -164,6 +172,7 @@ const projectData = [
     imageAlt: 'Project Screenshot',
     label: 'Featured Project',
     title: 'Example Project',
+    dateRange: '2024 - Present',
     description: 'A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.',
     links: [
       { url: '#', label: 'GitHub', icon: '' },
@@ -177,6 +186,7 @@ const projectData = [
     imageAlt: 'Project Screenshot',
     label: 'Featured Project',
     title: 'Example Project',
+    dateRange: '2024 - Present',
     description: 'A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.',
     links: [
       { url: '#', label: 'GitHub', icon: '' },
