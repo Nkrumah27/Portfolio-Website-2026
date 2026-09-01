@@ -231,3 +231,46 @@ if (contactForm && submitButton) {
     }, 2000);
   });
 }
+
+// Scroll Animation Observer
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const scrollObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      scrollObserver.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+// Observe tech icons
+const techIcons = document.querySelectorAll('.tech-icon');
+techIcons.forEach((icon) => {
+  icon.classList.add('tech-animate');
+  scrollObserver.observe(icon);
+});
+
+// Observe projects
+const projects = document.querySelectorAll('.project');
+projects.forEach((project) => {
+  project.classList.add('project-animate');
+  scrollObserver.observe(project);
+});
+
+// Observe contact section
+const contactGroup = document.querySelector('.contact_group');
+if (contactGroup) {
+  contactGroup.classList.add('scroll-animate');
+  scrollObserver.observe(contactGroup);
+}
+
+// Observe about section
+const aboutSection = document.querySelector('.about');
+if (aboutSection) {
+  aboutSection.classList.add('scroll-animate');
+  scrollObserver.observe(aboutSection);
+}
