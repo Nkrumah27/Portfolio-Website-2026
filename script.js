@@ -240,12 +240,12 @@ const projectData = [
   },
   {
     number: 'one',
-    image: 'images/bountiful.HEIC',
+    image: 'images/finalyear.JPG',
     imageAlt: 'Project Screenshot',
-    label: 'Bountiful Technologies',
-    title: 'STEM Instructor',
-    dateRange: '01/2026 - 09/2026',
-    description: 'Taught foundational STEM and computer science concepts to primary and junior high school students while supporting robotics competitions through student preparation, event setup, and coordination.',
+    label: 'Final Year Project Experience',
+    title: 'Intelligent Digital Counselling Platform for Universities',
+    dateRange: '01/2025 - 08/2025',
+    description: 'Led a 3-person team to research psychosocial barriers to student mental health through interviews with 50+ students and consultations with the UMaT Counseling Unit, using the findings to build a full-stack AI-powered mobile app with anonymous support, counselor matching, and automated pre-session analytics, which was validated by a university counselor and is under consideration for formal adoption by the UMaT Counseling Unit.',
     links: [
       { url: '#', label: 'GitHub', icon: '' },
       { url: '#', label: 'Twitter', icon: '' },
