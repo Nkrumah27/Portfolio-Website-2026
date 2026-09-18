@@ -138,15 +138,58 @@ class ProjectTabs {
   }
 }
 
+const navLinks = document.querySelectorAll('.header a[href^="#"]');
+
+navLinks.forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const targetId = link.getAttribute('href');
+    if (!targetId || targetId === '#') return;
+
+    const target = document.querySelector(targetId);
+    if (!target) return;
+
+    event.preventDefault();
+
+    const startY = window.scrollY;
+    const targetY = target.getBoundingClientRect().top + startY - 90;
+    const duration = 1400;
+    const startTime = performance.now();
+
+    const easeInOutCubic = (t) => {
+      if (t < 0.5) {
+        return 4 * t * t * t;
+      }
+      return 1 - Math.pow(-2 * t + 2, 3) / 2;
+    };
+
+    const animateScroll = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeInOutCubic(progress);
+
+      window.scrollTo({
+        top: startY + (targetY - startY) * easedProgress,
+        behavior: 'auto'
+      });
+
+      if (progress < 1) {
+        requestAnimationFrame(animateScroll);
+      }
+    };
+
+    requestAnimationFrame(animateScroll);
+  });
+});
+
 const projectData = [
   {
     number: 'one',
-    image: 'images/profile_pic.png',
+    image: 'images/coasted.jpg',
     imageAlt: 'Project Screenshot',
-    label: 'Featured Project',
-    title: 'Example Project',
-    dateRange: '2024 - Present',
-    description: 'A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.',
+    label: 'Coasted Code',
+    title: 'AI, Programming & Robotics Instructor  ',
+    dateRange: '09/2026 - Present',
+    description: 'Teach AI, programming, and robotics to Grade 1–8 students through age-appropriate, hands-on lessons while developing their creativity, computational thinking, and problem-solving skills. Guide students through real-world technology projects, supporting them from ideation to implementation at the end of each academic term.',
     links: [
       { url: '#', label: 'GitHub', icon: '' },
       { url: '#', label: 'Twitter', icon: '' },
@@ -155,12 +198,12 @@ const projectData = [
   },
   {
     number: 'two',
-    image: 'images/profile_pic.png',
+    image: 'images/navida.HEIC',
     imageAlt: 'Project Screenshot',
-    label: 'Featured Project',
-    title: 'Example Project',
-    dateRange: '2024 - Present',
-    description: 'A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.',
+    label: 'Navida Group of Companies ',
+    title: 'Social Media Marketer',
+    dateRange: '03/2026 - Present',
+    description: 'Manage and grow the digital presence of Navida’s multiple brands by creating engaging video content, 3D advertisements, and promotional materials, while improving audience engagement and overall brand visibility.',
     links: [
       { url: '#', label: 'GitHub', icon: '' },
       { url: '#', label: 'Twitter', icon: '' },
@@ -169,12 +212,12 @@ const projectData = [
   },
   {
     number: 'one',
-    image: 'images/profile_pic.png',
+    image: 'images/bountiful.HEIC',
     imageAlt: 'Project Screenshot',
-    label: 'Featured Project',
-    title: 'Example Project',
-    dateRange: '2024 - Present',
-    description: 'A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.',
+    label: 'Bountiful Technologies',
+    title: 'STEM Instructor',
+    dateRange: '01/2026 - 09/2026',
+    description: 'Taught foundational STEM and computer science concepts to primary and junior high school students while supporting robotics competitions through student preparation, event setup, and coordination.',
     links: [
       { url: '#', label: 'GitHub', icon: '' },
       { url: '#', label: 'Twitter', icon: '' },
@@ -183,12 +226,12 @@ const projectData = [
   },
   {
     number: 'two',
-    image: 'images/profile_pic.png',
+    image: 'images/enspire.HEIC',
     imageAlt: 'Project Screenshot',
-    label: 'Featured Project',
-    title: 'Example Project',
-    dateRange: '2024 - Present',
-    description: 'A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.',
+    label: 'EnspireFX Websites',
+    title: 'Web Developer',
+    dateRange: '10/2025 - 12/2025',
+    description: 'Gained hands-on experience across the web development lifecycle, from client needs assessment and UI/UX design to full-stack website development. Contributed to client projects including Owusu and Family Law Firm and Obaakro News, refining designs and frontend solutions based on feedback, while also writing and publishing news articles for the Ghanaian Standard.',
     links: [
       { url: '#', label: 'GitHub', icon: '' },
       { url: '#', label: 'Twitter', icon: '' },
@@ -197,12 +240,12 @@ const projectData = [
   },
   {
     number: 'one',
-    image: 'images/profile_pic.png',
+    image: 'images/bountiful.HEIC',
     imageAlt: 'Project Screenshot',
-    label: 'Featured Project',
-    title: 'Example Project',
-    dateRange: '2024 - Present',
-    description: 'A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.',
+    label: 'Bountiful Technologies',
+    title: 'STEM Instructor',
+    dateRange: '01/2026 - 09/2026',
+    description: 'Taught foundational STEM and computer science concepts to primary and junior high school students while supporting robotics competitions through student preparation, event setup, and coordination.',
     links: [
       { url: '#', label: 'GitHub', icon: '' },
       { url: '#', label: 'Twitter', icon: '' },

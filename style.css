@@ -21,6 +21,7 @@
 
 html {
   overflow-x: hidden;
+  scroll-padding-top: 90px;
 }
 
 body {
@@ -28,6 +29,8 @@ body {
   overflow-x: hidden;
   background-color: #100425;
   font-family: 'Josefin Sans', sans-serif;
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
 }
 
 img {
@@ -285,7 +288,7 @@ img {
 
 .pattern {
   position: absolute;
-  top: -80px;
+  top: -160px;
   right: -60px;
   width: 45%;
   max-width: 670px;
@@ -933,6 +936,36 @@ img {
     z-index: 2;
 }
 
+.project-one .project-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.project-two .project-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.project-one .project-label,
+.project-one .project-content h2,
+.project-one .project-date,
+.project-one .project-socials {
+  position: relative;
+  right: 0;
+}
+
+.project-two .project-label,
+.project-two .project-content h2,
+.project-two .project-date,
+.project-two .project-socials {
+  position: relative;
+  left: 0;
+}
+
 .project-label {
     display: block;
     color: #55ffff;
@@ -945,7 +978,7 @@ img {
 .project-content h2 {
     margin: 0 0 45px;
     color: #ffffff;
-    font-size: clamp(24px, 3vw, 36px);
+    font-size: clamp(24px, 3vw, 28px);
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -956,6 +989,21 @@ img {
   color: #b8b8b8;
   font-size: 15px;
   font-weight: 600;
+}
+
+.project-socials {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.project-one .project-socials {
+  justify-content: flex-end;
+}
+
+.project-two .project-socials {
+  justify-content: flex-start;
 }
 
 .project-description {
@@ -976,6 +1024,7 @@ img {
     color: #ffffff;
     font-size: 16px;
     line-height: 1.7;
+    text-align: justify;
 }
 
 .project-socials {
