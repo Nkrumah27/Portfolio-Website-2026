@@ -224,7 +224,8 @@ img {
   flex-wrap: wrap;
 }
 
-.pers2 > button {
+.pers2 > button,
+.pers2 > a {
   width: 145px;
   height: 46px;
   background: linear-gradient(90deg, #5DFFFF 0%, #AE0CA7 100%);
@@ -237,6 +238,8 @@ img {
   font-style: bold;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 15px;
+  text-decoration: none;
+  text-align: center;
 }
 
 .pers11 {
