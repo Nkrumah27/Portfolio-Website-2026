@@ -234,12 +234,18 @@ img {
   border: none;
   transition: transform 180ms ease, color 180ms ease;
   color: #FFFFFF;
-  line-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-style: bold;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 15px;
   text-decoration: none;
   text-align: center;
+}
+.pers2 > a:hover,
+.pers2 > a:focus-visible {
+  transform: translateY(-2px) scale(1.2);
 }
 
 .pers11 {

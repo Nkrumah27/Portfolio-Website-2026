@@ -7,7 +7,9 @@ const projectTabs = document.querySelector('.project-tabs');
 const socialIconPaths = {
   Twitter: 'M18.9 2H22l-6.77 7.74L23.2 22h-6.24l-4.89-6.39L6.48 22H3.36l7.24-8.28L2.8 2h6.4l4.42 5.84L18.9 2Zm-1.1 17.68h1.73L8.29 4.2H6.43L17.8 19.68Z',
   GitHub: 'M12 2.5a9.5 9.5 0 0 0-3 18.51c.47.09.65-.2.65-.45v-1.67c-2.65.58-3.2-1.13-3.2-1.13-.43-1.1-1.05-1.39-1.05-1.39-.86-.59.07-.58.07-.58.95.07 1.45.98 1.45.98.85 1.45 2.23 1.03 2.78.79.09-.62.33-1.03.6-1.27-2.12-.24-4.35-1.06-4.35-4.72 0-1.04.37-1.89.98-2.56-.1-.24-.43-1.21.09-2.53 0 0 .8-.26 2.62.98A9.1 9.1 0 0 1 12 7.17c.81 0 1.62.11 2.38.29 1.82-1.24 2.62-.98 2.62-.98.52 1.32.19 2.29.09 2.53.61.67.98 1.52.98 2.56 0 3.67-2.23 4.48-4.36 4.72.34.29.65.86.65 1.74v2.58c0 .25.17.54.65.45A9.5 9.5 0 0 0 12 2.5Z',
-  LinkedIn: 'M5.2 3.5A2.2 2.2 0 1 1 5.2 7.9a2.2 2.2 0 0 1 0-4.4ZM3.3 9.6h3.8V21H3.3V9.6Zm6.1 0h3.6v1.56h.05c.5-.95 1.72-1.96 3.55-1.96 3.8 0 4.5 2.5 4.5 5.76V21h-3.8v-5.36c0-1.28-.02-2.92-1.78-2.92-1.78 0-2.05 1.39-2.05 2.83V21H9.4V9.6Z'
+  LinkedIn: 'M5.2 3.5A2.2 2.2 0 1 1 5.2 7.9a2.2 2.2 0 0 1 0-4.4ZM3.3 9.6h3.8V21H3.3V9.6Zm6.1 0h3.6v1.56h.05c.5-.95 1.72-1.96 3.55-1.96 3.8 0 4.5 2.5 4.5 5.76V21h-3.8v-5.36c0-1.28-.02-2.92-1.78-2.92-1.78 0-2.05 1.39-2.05 2.83V21H9.4V9.6Z',
+  Website: 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.92 9h-3.03a15.7 15.7 0 0 0-1.16-5.04A8.04 8.04 0 0 1 18.92 11ZM12 4c.9 1.24 1.57 3.5 1.82 7h-3.64C10.43 7.5 11.1 5.24 12 4ZM9.27 5.96A15.7 15.7 0 0 0 8.11 11H5.08a8.04 8.04 0 0 1 4.19-5.04ZM5.08 13h3.03a15.7 15.7 0 0 0 1.16 5.04A8.04 8.04 0 0 1 5.08 13Zm6.92 7c-.9-1.24-1.57-3.5-1.82-7h3.64c-.25 3.5-.92 5.76-1.82 7Zm2.73-1.96A15.7 15.7 0 0 0 15.89 13h3.03a8.04 8.04 0 0 1-4.19 5.04Z',
+  Gallery: 'M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm0 2v14h14V5H5Zm2 11 3.5-4.5 2.5 3 1.5-2 3 3.5H7Zm7-6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z'
 };
 
 class Project {
@@ -191,9 +193,11 @@ const projectData = [
     dateRange: '09/2026 - Present',
     description: 'Teach AI, programming, and robotics to Grade 1–8 students through age-appropriate, hands-on lessons while developing their creativity, computational thinking, and problem-solving skills. Guide students through real-world technology projects, supporting them from ideation to implementation at the end of each academic term.',
     links: [
-      { url: '#', label: 'GitHub', icon: '' },
-      { url: '#', label: 'Twitter', icon: '' },
-      { url: '#', label: 'LinkedIn', icon: '' }
+      /*{ url: '#', label: 'GitHub', icon: '' },
+      { url: '#', label: 'Twitter', icon: '' },*/
+      { url: 'https://www.linkedin.com/company/coasted-code/posts/', label: 'LinkedIn', icon: '' },
+      { url: 'https://www.coastedcode.com', label: 'Website' },
+      { url: '#', label: 'Gallery' }
     ]
   },
   {
@@ -205,9 +209,11 @@ const projectData = [
     dateRange: '03/2026 - Present',
     description: 'Manage and grow the digital presence of Navida’s multiple brands by creating engaging video content, 3D advertisements, and promotional materials, while improving audience engagement and overall brand visibility.',
     links: [
-      { url: '#', label: 'GitHub', icon: '' },
-      { url: '#', label: 'Twitter', icon: '' },
-      { url: '#', label: 'LinkedIn', icon: '' }
+      //{ url: '#', label: 'GitHub', icon: '' },
+      //{ url: '#', label: 'Twitter', icon: '' },
+      //{ url: '#', label: 'LinkedIn', icon: '' },
+      //{ url: '#', label: 'Website' },
+      { url: '#', label: 'Gallery' }
     ]
   },
   {
@@ -219,9 +225,11 @@ const projectData = [
     dateRange: '01/2026 - 09/2026',
     description: 'Taught foundational STEM and computer science concepts to primary and junior high school students while supporting robotics competitions through student preparation, event setup, and coordination.',
     links: [
-      { url: '#', label: 'GitHub', icon: '' },
-      { url: '#', label: 'Twitter', icon: '' },
-      { url: '#', label: 'LinkedIn', icon: '' }
+      //{ url: '#', label: 'GitHub', icon: '' },
+      //{ url: '#', label: 'Twitter', icon: '' },
+      { url: '#', label: 'LinkedIn', icon: '' },
+      { url: '#', label: 'Website' },
+      { url: '#', label: 'Gallery' }
     ]
   },
   {
@@ -233,9 +241,11 @@ const projectData = [
     dateRange: '10/2025 - 12/2025',
     description: 'Gained hands-on experience across the web development lifecycle, from client needs assessment and UI/UX design to full-stack website development. Contributed to client projects including Owusu and Family Law Firm and Obaakro News, refining designs and frontend solutions based on feedback, while also writing and publishing news articles for the Ghanaian Standard.',
     links: [
-      { url: '#', label: 'GitHub', icon: '' },
-      { url: '#', label: 'Twitter', icon: '' },
-      { url: '#', label: 'LinkedIn', icon: '' }
+      //{ url: '#', label: 'GitHub', icon: '' },
+      //{ url: '#', label: 'Twitter', icon: '' },
+      { url: '#', label: 'LinkedIn', icon: '' },
+      { url: '#', label: 'Website' },
+      { url: '#', label: 'Gallery' }
     ]
   },
   {
@@ -247,9 +257,11 @@ const projectData = [
     dateRange: '01/2025 - 08/2025',
     description: 'Led a 3-person team to research psychosocial barriers to student mental health through interviews with 50+ students and consultations with the UMaT Counseling Unit, using the findings to build a full-stack AI-powered mobile app with anonymous support, counselor matching, and automated pre-session analytics, which was validated by a university counselor and is under consideration for formal adoption by the UMaT Counseling Unit.',
     links: [
-      { url: '#', label: 'GitHub', icon: '' },
-      { url: '#', label: 'Twitter', icon: '' },
-      { url: '#', label: 'LinkedIn', icon: '' }
+      //{ url: '#', label: 'GitHub', icon: '' },
+      //{ url: '#', label: 'Twitter', icon: '' },
+      //{ url: '#', label: 'LinkedIn', icon: '' },
+      //{ url: '#', label: 'Website' },
+      { url: '#', label: 'Gallery' }
     ]
   }
 ];
