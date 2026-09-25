@@ -263,6 +263,38 @@ const projectData = [
       //{ url: '#', label: 'Website' },
       { url: '#', label: 'Gallery' }
     ]
+  },
+  {
+    number: 'two',
+    image: 'images/finalyear.JPG',
+    imageAlt: 'Project Screenshot',
+    label: 'National Election, Ghana',
+    title: 'Volunteer Polling Agent',
+    dateRange: '07/2024',
+    description: 'Represented the New Patriotic Party’s parliamentary and presidential candidates at a polling station in the Ablekuma Central constituency, monitoring the voting process for compliance with electoral regulations and participating in the official vote count to support a transparent and fair process.',
+    links: [
+      //{ url: '#', label: 'GitHub', icon: '' },
+      //{ url: '#', label: 'Twitter', icon: '' },
+      //{ url: '#', label: 'LinkedIn', icon: '' },
+      //{ url: '#', label: 'Website' },
+      { url: '#', label: 'Gallery' }
+    ]
+  },
+  {
+    number: 'one',
+    image: 'images/finalyear.JPG',
+    imageAlt: 'Project Screenshot',
+    label: 'Computer Science and Engineering Department Soccer Team, UMaT',
+    title: 'Soccer Defender',
+    dateRange: '2023 - 2025',
+    description: 'Participated in regular football training and university-level leagues and tournaments, helping the team secure second place for the department in both the 2023 and 2024 UMaT Departmental League.',
+    links: [
+      //{ url: '#', label: 'GitHub', icon: '' },
+      //{ url: '#', label: 'Twitter', icon: '' },
+      //{ url: '#', label: 'LinkedIn', icon: '' },
+      //{ url: '#', label: 'Website' },
+      { url: '#', label: 'Gallery' }
+    ]
   }
 ];
 
